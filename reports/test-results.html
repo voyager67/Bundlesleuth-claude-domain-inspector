@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test Results | Claude Bundle Domain Inspector</title>
+<style>
+:root{color-scheme:light dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif}body{max-width:900px;margin:40px auto;padding:0 20px;line-height:1.6}header{padding:24px 0;border-bottom:1px solid #8885}h1{line-height:1.15}.sub{opacity:.75}.status{font-weight:700}.pass{color:#16803d}table{width:100%;border-collapse:collapse;margin:24px 0}th,td{text-align:left;padding:12px;border-bottom:1px solid #8885;vertical-align:top}th{background:#8881}.notice{padding:16px;border:1px solid #b8860b;border-radius:10px}code{overflow-wrap:anywhere}footer{margin-top:36px;padding-top:16px;border-top:1px solid #8885;opacity:.8;font-size:.9rem}
+</style></head>
+<body>
+<header><p class="sub">PROJECT TEST REPORT · 15 OCTOBER 2026</p><h1>Claude Bundle Domain Inspector</h1><p>Local automated checks for the shell utility's syntax and string-matching behavior.</p></header>
+<h2>Summary</h2><p><strong>5 of 5 checks passed</strong> in a simulated local test environment.</p>
+<table><thead><tr><th>Check</th><th>Result</th><th>Details</th></tr></thead><tbody>
+<tr><td>Shell syntax validation</td><td class="status pass">PASS</td><td><code>sh -n</code> completed without syntax errors.</td></tr>
+<tr><td>Domain detection</td><td class="status pass">PASS</td><td>Detected <code>alpha.ic.gov</code> and <code>service.sgov.gov</code>.</td></tr>
+<tr><td>Duplicate handling</td><td class="status pass">PASS</td><td>Repeated matches were deduplicated.</td></tr>
+<tr><td>Unrelated domains</td><td class="status pass">PASS</td><td><code>example.com</code> was not reported.</td></tr>
+<tr><td>Missing installation</td><td class="status pass">PASS</td><td>The expected missing-bundle message appeared when no matching bundle was present.</td></tr>
+</tbody></table>
+<div class="notice"><strong>Important environment limitation</strong><br>This was tested with a temporary simulated bundle in a non-macOS environment. It has <strong>not</strong> been tested against an actual macOS Claude Code installation.</div>
+<h2>Method</h2><p>The script was run against a temporary fixture placed at the directory pattern it searches. A separate empty temporary home directory was used to test the missing-installation path. Temporary fixtures were removed after testing.</p>
+<h2>What this does not prove</h2><ul><li>It does not prove a domain is contacted or used at runtime.</li><li>It does not verify behavior across all Claude Code versions or installation layouts.</li><li>It is not a substitute for testing on a Mac with the target installation.</li></ul>
+<h2>Reproduce locally</h2><pre><code>sh -n claude-bundle-gov-domain-inspector.sh
+./claude-bundle-gov-domain-inspector.sh</code></pre>
+<footer>Prepared for the Claude Bundle Domain Inspector project · Harsh Singh · MIT License</footer>
+</body></html>
